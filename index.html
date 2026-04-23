@@ -13,7 +13,6 @@ body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
 
-  /* fundo com textura leve */
   background:
     url('https://www.transparenttextures.com/patterns/asfalt-light.png'),
     linear-gradient(135deg, #e3f2fd, #bbdefb);
@@ -22,10 +21,9 @@ body {
 /* CARROSSEL */
 .carousel {
   position: relative;
-  width: 100vw;
+  width: 100%; /* 🔥 corrigido */
   height: 280px;
   overflow: hidden;
-  margin-left: calc(-50vw + 50%);
 }
 
 .carousel img {
@@ -71,7 +69,6 @@ h1 {
   justify-content: center;
   flex-wrap: wrap;
   gap: 10px;
-  width: 100%;
 }
 
 .card {
@@ -138,10 +135,6 @@ h1 {
   .card {
     width: 45%;
   }
-
-  .photo-button {
-    max-width: 100%;
-  }
 }
 
 </style>
@@ -181,7 +174,7 @@ h1 {
 <div class="photo-section">
 
   <a href="https://photos.app.goo.gl/AkPUaFz8rVMsXZFu5" target="_blank" class="photo-button">
-    Compartilhe os cliques da festa conosco
+    📷 Compartilhe os cliques da festa conosco
   </a>
 
 </div>
