@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Matheus</title>
+<title>Aniversário</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -21,7 +21,7 @@ body {
 .carousel {
   position: relative;
   width: 100vw;
-  height: 260px;
+  height: 300px;
   overflow: hidden;
   margin-left: calc(-50vw + 50%);
 }
@@ -29,8 +29,8 @@ body {
 .carousel img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* preenche tudo */
-  object-position: center top; /* NÃO corta cabeça */
+  object-fit: cover;
+  object-position: 50% 20%; /* DESKTOP: sobe o foco */
   position: absolute;
   opacity: 0;
   transition: opacity 1s;
@@ -117,6 +117,10 @@ h1 {
     height: 220px;
   }
 
+  .carousel img {
+    object-position: center top; /* MOBILE: mantém perfeito */
+  }
+
   h1 {
     font-size: 22px;
     margin-top: 15px;
@@ -160,7 +164,7 @@ h1 {
 
 <div class="container">
 
-<h1>ANIVERSÁRIO DO MATHEUS </h1>
+<h1>ANIVERSÁRIO DO NATHEUS</h1>
 <p class="subtitle">Escolha uma opção</p>
 
 <div class="cards">
