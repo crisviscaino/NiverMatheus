@@ -74,15 +74,15 @@ h1 {
   font-weight: 500;
 }
 
-/* BADGE HERO */
+/* BADGE (APENAS NÚMERO) */
 .badge {
   display: inline-block;
-  background: #222;
+  background: #d32f2f;
   color: white;
-  padding: 4px 10px;
-  border-radius: 8px;
+  padding: 2px 8px;
+  border-radius: 6px;
   font-weight: 700;
-  margin-left: 6px;
+  margin: 0 4px;
 
   box-shadow: 2px 2px 0 rgba(0,0,0,0.2);
 }
@@ -181,7 +181,8 @@ h1 {
 
 <p class="countdown">
   <span id="texto"></span>
-  <span id="dias" class="badge"></span>
+  <span id="numero" class="badge"></span>
+  <span id="resto"></span>
 </p>
 
 <div class="cards">
@@ -220,7 +221,7 @@ setInterval(() => {
   images[index].classList.add('active');
 }, 3000);
 
-/* CONTADOR HERO */
+/* CONTADOR */
 function atualizarContagem() {
   const dataEvento = new Date("2026-06-04T13:00:00");
   const hoje = new Date();
@@ -230,20 +231,25 @@ function atualizarContagem() {
   const dias = Math.ceil(diferenca / (1000 * 60 * 60 * 24));
 
   const texto = document.getElementById("texto");
-  const badge = document.getElementById("dias");
+  const numero = document.getElementById("numero");
+  const resto = document.getElementById("resto");
 
   if (dias > 1) {
     texto.innerText = "Faltam";
-    badge.innerText = dias + " dias para a missão";
+    numero.innerText = dias;
+    resto.innerText = "dias para a missão";
   } else if (dias === 1) {
     texto.innerText = "Falta";
-    badge.innerText = "1 dia para a missão";
+    numero.innerText = "1";
+    resto.innerText = "dia para a missão";
   } else if (dias === 0) {
     texto.innerText = "";
-    badge.innerText = "É hoje!";
+    numero.innerText = "HOJE";
+    resto.innerText = "";
   } else {
     texto.innerText = "";
-    badge.innerText = "A festa já aconteceu";
+    numero.innerText = "";
+    resto.innerText = "A festa já aconteceu";
   }
 }
 
