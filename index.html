@@ -2,11 +2,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Matheus</title>
+<title>Aniversário</title>
+
+<!-- RESPONSIVO (ESSENCIAL) -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
-<!-- NOVA FONTE -->
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
 
 <style>
@@ -17,7 +19,7 @@ body {
   background: linear-gradient(135deg, #e3f2fd, #bbdefb);
 }
 
-/* CARROSSEL FULL */
+/* CARROSSEL */
 .carousel {
   position: relative;
   width: 100%;
@@ -27,11 +29,9 @@ body {
 
 .carousel img {
   width: 100%;
-  height: 260px;
+  height: 100%;
   object-fit: cover;
   position: absolute;
-  top: 0;
-  left: 0;
   opacity: 0;
   transition: opacity 1s;
 }
@@ -40,11 +40,10 @@ body {
   opacity: 1;
 }
 
-/* overlay suave */
 .overlay {
   position: absolute;
   width: 100%;
-  height: 260px;
+  height: 100%;
   background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2));
 }
 
@@ -61,11 +60,9 @@ h1 {
   color: white;
   margin-top: 10px;
   margin-bottom: 10px;
-
   text-shadow: 2px 4px 12px rgba(0,0,0,0.4);
 }
 
-/* SUB */
 .subtitle {
   margin-bottom: 25px;
   color: #555;
@@ -89,11 +86,6 @@ h1 {
   color: #333;
 
   box-shadow: 0 6px 14px rgba(0,0,0,0.1);
-  transition: all 0.2s ease;
-}
-
-.card:hover {
-  transform: translateY(-4px);
 }
 
 .icon {
@@ -112,13 +104,51 @@ h1 {
   color: #777;
 }
 
+/* 🔥 RESPONSIVO MOBILE */
+@media (max-width: 600px) {
+
+  .carousel {
+    height: 200px;
+  }
+
+  h1 {
+    font-size: 22px;
+    letter-spacing: 1px;
+    margin-top: 5px;
+  }
+
+  .container {
+    padding: 25px 15px;
+  }
+
+  .cards {
+    gap: 10px;
+  }
+
+  .card {
+    width: 45%;
+    padding: 12px 8px;
+  }
+
+  .icon {
+    font-size: 18px;
+  }
+
+  .card h3 {
+    font-size: 12px;
+  }
+
+  .card p {
+    font-size: 10px;
+  }
+}
+
 </style>
 
 </head>
 
 <body>
 
-<!-- CARROSSEL -->
 <div class="carousel">
   <div class="overlay"></div>
 
@@ -129,7 +159,7 @@ h1 {
 
 <div class="container">
 
-<h1>ANIVERSÁRIO DO MATHEUS</h1>
+<h1>ANIVERSÁRIO DO [NOME]</h1>
 <p class="subtitle">Escolha uma opção</p>
 
 <div class="cards">
@@ -142,7 +172,7 @@ h1 {
 
 <a href="presentes.html" class="card">
   <div class="icon"><i class="fas fa-star"></i></div>
-  <h3>Ideias</h3>
+  <h3>Sugestões</h3>
   <p>O que ele ama</p>
 </a>
 
