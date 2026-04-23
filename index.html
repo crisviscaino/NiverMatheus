@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Aniversário</title>
+<title>Matheus</title>
 
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
@@ -14,49 +14,64 @@ body {
   margin: 0;
   text-align: center;
 
-  /* FUNDO MAIS DIVERTIDO (camadas) */
-  background:
-    radial-gradient(circle at 20% 20%, rgba(25,118,210,0.08), transparent 40%),
-    radial-gradient(circle at 80% 30%, rgba(239,83,80,0.08), transparent 40%),
-    radial-gradient(circle at 50% 80%, rgba(25,118,210,0.06), transparent 40%),
-    linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.95)),
-    url('https://www.transparenttextures.com/patterns/comic-noise.png');
+  /* FUNDO MAIS VIVO */
+  background: linear-gradient(135deg, #e3f2fd, #bbdefb);
 }
 
+/* CARROSSEL */
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+}
+
+.carousel img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.carousel img.active {
+  opacity: 1;
+}
+
+/* SOBREPOSIÇÃO PARA DAR ESTILO */
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 220px;
+  background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2));
+}
+
+/* CONTAINER */
 .container {
-  padding: 50px 20px;
+  padding: 30px 20px;
 }
 
-/* TÍTULO MAIS FORTE E BONITO */
+/* TÍTULO */
 h1 {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   font-size: 26px;
   letter-spacing: 2px;
-  color: #1565c0;
+  color: white;
+  margin-top: -40px;
 
-  /* sombra elegante */
-  text-shadow: 1px 2px 6px rgba(21,101,192,0.25);
-
-  margin-bottom: 10px;
+  text-shadow: 2px 4px 10px rgba(0,0,0,0.4);
 }
 
-h1::after {
-  content: "";
-  display: block;
-  width: 40px;
-  height: 2px;
-  background: linear-gradient(to right, #1565c0, #42a5f5);
-  margin: 12px auto 0;
-  border-radius: 10px;
-}
-
+/* SUB */
 .subtitle {
-  margin-bottom: 30px;
-  color: #888;
+  margin-bottom: 25px;
+  color: #555;
   font-size: 13px;
 }
 
+/* CARDS */
 .cards {
   display: flex;
   justify-content: center;
@@ -65,7 +80,6 @@ h1::after {
 }
 
 .card {
-  position: relative;
   background: white;
   width: 145px;
   padding: 15px 10px;
@@ -73,15 +87,12 @@ h1::after {
   text-decoration: none;
   color: #333;
 
-  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
-  border: 1px solid rgba(0,0,0,0.05);
-
+  box-shadow: 0 6px 14px rgba(0,0,0,0.1);
   transition: all 0.2s ease;
 }
 
 .card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+  transform: translateY(-4px);
 }
 
 .icon {
@@ -93,25 +104,11 @@ h1::after {
 .card h3 {
   margin: 4px 0;
   font-size: 13px;
-  font-weight: 600;
 }
 
 .card p {
   font-size: 11px;
-  color: #999;
-}
-
-/* detalhe HQ sutil */
-.card::before {
-  content: "";
-  position: absolute;
-  width: 3px;
-  height: 3px;
-  background: #1565c0;
-  border-radius: 50%;
-  top: 8px;
-  left: 8px;
-  opacity: 0.4;
+  color: #777;
 }
 
 </style>
@@ -119,6 +116,16 @@ h1::after {
 </head>
 
 <body>
+
+<!-- CARROSSEL -->
+<div class="carousel">
+  <div class="overlay"></div>
+
+  <!-- TROCAR POR FOTOS DO SEU FILHO -->
+  <img src="https://picsum.photos/800/300?1" class="active">
+  <img src="https://picsum.photos/800/300?2">
+  <img src="https://picsum.photos/800/300?3">
+</div>
 
 <div class="container">
 
@@ -148,6 +155,18 @@ h1::after {
 </div>
 
 </div>
+
+<!-- SCRIPT DO CARROSSEL -->
+<script>
+let index = 0;
+const images = document.querySelectorAll('.carousel img');
+
+setInterval(() => {
+  images[index].classList.remove('active');
+  index = (index + 1) % images.length;
+  images[index].classList.add('active');
+}, 3000);
+</script>
 
 </body>
 </html>
