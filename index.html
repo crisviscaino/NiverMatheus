@@ -6,6 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
 
 <style>
@@ -13,7 +15,6 @@ body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
   background: linear-gradient(135deg, #e3f2fd, #bbdefb);
-  text-align: center;
 }
 
 /* CARROSSEL */
@@ -49,40 +50,62 @@ body {
 /* CONTAINER */
 .container {
   padding: 20px 15px 10px;
+  text-align: center;
 }
 
 /* TÍTULO */
 h1 {
   font-family: 'Oswald', sans-serif;
   font-size: 26px;
+  letter-spacing: 1.5px;
   color: #2e2e2e;
   margin-top: 8px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
-/* BOTÕES PADRÃO */
-.buttons {
+/* CARDS */
+.cards {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 10px;
 }
 
-.button {
-  padding: 10px 18px;
+.card {
   background: #e0e0e0;
-  color: #333;
-  text-decoration: none;
+  width: 130px;
+  padding: 10px 16px;
   border-radius: 10px;
-  font-size: 13px;
+  text-decoration: none;
+  color: #333;
+
+  box-shadow: none;
   transition: all 0.2s ease;
 }
 
-.button:hover {
+.card:hover {
   background: #d5d5d5;
+  transform: translateY(-2px);
 }
 
-/* SEÇÃO DE FOTOS */
+/* TEXTO */
+.card h3 {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* REMOVE SUBTEXTO */
+.card p {
+  display: none;
+}
+
+/* REMOVE ÍCONE (mais clean) */
+.icon {
+  display: none;
+}
+
+/* BOTÃO DE FOTOS */
 .photo-section {
   margin-top: 15px;
 }
@@ -102,6 +125,9 @@ h1 {
     font-size: 22px;
   }
 
+  .card {
+    width: 45%;
+  }
 }
 
 </style>
@@ -110,7 +136,6 @@ h1 {
 
 <body>
 
-<!-- CARROSSEL -->
 <div class="carousel">
   <div class="overlay"></div>
 
@@ -123,20 +148,27 @@ h1 {
 
 <h1>ANIVERSÁRIO DO MATHEUS</h1>
 
-<!-- BOTÕES -->
-<div class="buttons">
+<div class="cards">
 
-  <a href="sobre.html" class="button">Sobre</a>
-  <a href="presentes.html" class="button">Ideias</a>
-  <a href="info.html" class="button">Informações</a>
+<a href="sobre.html" class="card">
+  <h3>Sobre</h3>
+</a>
+
+<a href="presentes.html" class="card">
+  <h3>IDEIAS</h3>
+</a>
+
+<a href="info.html" class="card">
+  <h3>Informações</h3>
+</a>
 
 </div>
 
 <!-- BOTÃO DE FOTOS -->
 <div class="photo-section">
 
-  <a href="SEU_LINK_DO_ALBUM" target="_blank" class="button">
-    📸 Compartilhe suas fotos conosco
+  <a href="https://photos.app.goo.gl/AkPUaFz8rVMsXZFu5" target="_blank" class="card">
+    <h3>📸 Compartilhe os cliques da Festa Conosco</h3>
   </a>
 
 </div>
