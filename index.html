@@ -2,10 +2,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Matheus</title>
+<title>Aniversário</title>
 
-<!-- Ícones modernos -->
+<!-- Ícones -->
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+<!-- Fonte estilo quadrinhos -->
+<link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
 
 <style>
 body {
@@ -13,7 +16,6 @@ body {
   margin: 0;
   text-align: center;
 
-  /* Fundo HQ suave */
   background:
     linear-gradient(rgba(255,255,255,0.92), rgba(255,255,255,0.92)),
     url('https://www.transparenttextures.com/patterns/comic-noise.png');
@@ -23,14 +25,16 @@ body {
   padding: 40px 15px;
 }
 
+/* TÍTULO ESTILO HQ */
 h1 {
-  margin-bottom: 8px;
-  font-size: 24px;
-  color: #333;
-  position: relative;
+  font-family: 'Bangers', cursive;
+  font-size: 36px;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+  color: #0d47a1;
+  text-shadow: 2px 2px 0 #90caf9;
 }
 
-/* detalhe sutil estilo HQ no título */
 h1::after {
   content: "";
   display: block;
@@ -55,6 +59,7 @@ h1::after {
 }
 
 .card {
+  position: relative;
   background: white;
   width: 150px;
   padding: 16px 12px;
@@ -62,10 +67,7 @@ h1::after {
   text-decoration: none;
   color: #333;
 
-  /* sombra suave */
   box-shadow: 0 6px 14px rgba(0,0,0,0.08);
-
-  /* detalhe HQ sutil */
   border: 1px solid rgba(25,118,210,0.1);
 
   transition: all 0.25s ease;
@@ -93,7 +95,7 @@ h1::after {
   color: #888;
 }
 
-/* micro detalhe estilo quadrinho nos cards */
+/* detalhe HQ sutil */
 .card::before {
   content: "";
   position: absolute;
@@ -106,10 +108,6 @@ h1::after {
   opacity: 0.6;
 }
 
-.card {
-  position: relative;
-}
-
 </style>
 
 </head>
@@ -118,7 +116,7 @@ h1::after {
 
 <div class="container">
 
-<h1>🎉 Aniversário de 6 Anos do Matheus🎉</h1>
+<h1>Aniversário do Matheus</h1>
 <p class="subtitle">Escolha uma opção</p>
 
 <div class="cards">
@@ -131,7 +129,7 @@ h1::after {
 
 <a href="presentes.html" class="card">
   <div class="icon"><i class="fas fa-star"></i></div>
-  <h3>Ideias</h3>
+  <h3>Sugestões</h3>
   <p>O que ele ama</p>
 </a>
 
