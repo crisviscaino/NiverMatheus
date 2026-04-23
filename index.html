@@ -63,7 +63,15 @@ h1 {
   letter-spacing: 1.5px;
   color: #2e2e2e;
   margin-top: 10px;
-  margin-bottom: 18px;
+  margin-bottom: 5px;
+}
+
+/* CONTADOR */
+.countdown {
+  font-size: 14px;
+  color: #444;
+  margin-bottom: 15px;
+  font-weight: 500;
 }
 
 /* CARDS */
@@ -158,6 +166,8 @@ h1 {
 
 <h1>ANIVERSÁRIO DO MATHEUS</h1>
 
+<p id="countdown" class="countdown"></p>
+
 <div class="cards">
 
 <a href="sobre.html" class="card">
@@ -193,6 +203,30 @@ setInterval(() => {
   index = (index + 1) % images.length;
   images[index].classList.add('active');
 }, 3000);
+
+/* CONTADOR */
+function atualizarContagem() {
+  const dataEvento = new Date("2026-06-04T13:00:00");
+  const hoje = new Date();
+
+  const diferenca = dataEvento - hoje;
+
+  const dias = Math.ceil(diferenca / (1000 * 60 * 60 * 24));
+
+  const el = document.getElementById("countdown");
+
+  if (dias > 1) {
+    el.innerText = "Faltam " + dias + " dias para a missão";
+  } else if (dias === 1) {
+    el.innerText = "Falta 1 dia para a missão";
+  } else if (dias === 0) {
+    el.innerText = "É hoje!";
+  } else {
+    el.innerText = "A festa já aconteceu";
+  }
+}
+
+atualizarContagem();
 </script>
 
 </body>
