@@ -21,17 +21,21 @@ body {
 .carousel {
   position: relative;
   width: 100vw;
-  height: 290px; /* 👈 menor no desktop */
+  height: 280px;
   overflow: hidden;
   margin-left: calc(-50vw + 50%);
 }
 
+/* IMAGEM AJUSTADA (MENOR + CENTRALIZADA) */
 .carousel img {
-  width: 100%;
-  height: 95%;
+  width: 92%;
+  height: 92%;
   object-fit: cover;
   object-position: 50% 10%;
   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   opacity: 0;
   transition: opacity 1s;
 }
@@ -40,6 +44,7 @@ body {
   opacity: 1;
 }
 
+/* overlay suave */
 .overlay {
   position: absolute;
   width: 100%;
@@ -49,25 +54,25 @@ body {
 
 /* CONTAINER */
 .container {
-  padding: 40px 20px 20px;
+  padding: 20px 15px 10px;
   text-align: center;
 }
 
 /* TÍTULO */
 h1 {
   font-family: 'Oswald', sans-serif;
-  font-size: 28px;
+  font-size: 26px;
   letter-spacing: 1.5px;
   color: #2e2e2e;
-  margin-top: 15px;
-  margin-bottom: 10px;
+  margin-top: 8px;
+  margin-bottom: 6px;
 }
 
 /* SUB */
 .subtitle {
-  margin-bottom: 25px;
+  margin-bottom: 15px;
   color: #666;
-  font-size: 13px;
+  font-size: 12px;
 }
 
 /* CARDS */
@@ -75,38 +80,38 @@ h1 {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 14px;
+  gap: 10px;
 }
 
 .card {
   background: white;
-  width: 145px;
-  padding: 15px 10px;
-  border-radius: 14px;
+  width: 130px;
+  padding: 12px 8px;
+  border-radius: 12px;
   text-decoration: none;
   color: #333;
 
-  box-shadow: 0 6px 14px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
   transition: all 0.2s ease;
 }
 
 .card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-3px);
 }
 
 .icon {
-  font-size: 20px;
-  margin-bottom: 6px;
+  font-size: 18px;
+  margin-bottom: 5px;
   color: #1565c0;
 }
 
 .card h3 {
-  margin: 4px 0;
-  font-size: 13px;
+  margin: 3px 0;
+  font-size: 12px;
 }
 
 .card p {
-  font-size: 11px;
+  font-size: 10px;
   color: #777;
 }
 
@@ -114,37 +119,24 @@ h1 {
 @media (max-width: 600px) {
 
   .carousel {
-    height: 220px; /* mantém bom no celular */
+    height: 220px;
   }
 
   .carousel img {
+    width: 100%;
+    height: 100%;
     object-position: center top;
+    transform: none;
+    top: 0;
+    left: 0;
   }
 
   h1 {
     font-size: 22px;
-    margin-top: 15px;
-  }
-
-  .container {
-    padding: 25px 15px;
   }
 
   .card {
     width: 45%;
-    padding: 12px 8px;
-  }
-
-  .icon {
-    font-size: 18px;
-  }
-
-  .card h3 {
-    font-size: 12px;
-  }
-
-  .card p {
-    font-size: 10px;
   }
 }
 
