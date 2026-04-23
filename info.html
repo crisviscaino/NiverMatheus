@@ -12,31 +12,52 @@
 body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
-  background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+
+  /* FUNDO HQ */
+  background-color: #f7f7f7;
+  background-image:
+    radial-gradient(circle, rgba(0,0,0,0.06) 1px, transparent 1px),
+    url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+  background-size: 16px 16px, auto;
+
   text-align: center;
 }
 
 /* CONTAINER */
 .container {
-  padding: 30px 20px;
+  padding: 30px 20px 40px;
 }
 
 /* TÍTULO */
 h1 {
   font-family: 'Oswald', sans-serif;
   font-size: 26px;
-  color: #2e2e2e;
+  color: #222;
   margin-bottom: 20px;
 }
 
-/* CARD */
+/* CARD HQ */
 .card {
   background: white;
   padding: 20px;
   border-radius: 14px;
-  box-shadow: 0 6px 14px rgba(0,0,0,0.1);
   max-width: 420px;
   margin: 0 auto 20px;
+
+  border: 2px solid #222;
+  position: relative;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  width: 100%;
+  height: 100%;
+  border: 2px solid rgba(0,0,0,0.15);
+  border-radius: 14px;
+  z-index: -1;
 }
 
 /* ITENS */
@@ -63,16 +84,17 @@ h1 {
 .button {
   display: inline-block;
   margin: 5px;
-  padding: 10px 15px;
-  background: #1565c0;
-  color: white;
+  padding: 10px 14px;
+  background: #f0f0f0;
+  color: #333;
   text-decoration: none;
-  border-radius: 8px;
+  border-radius: 10px;
   font-size: 13px;
+  border: 1px solid rgba(0,0,0,0.08);
 }
 
-.button.waze {
-  background: #00c853;
+.button:hover {
+  background: #e6e6e6;
 }
 
 /* MAPA */
@@ -84,13 +106,14 @@ h1 {
   margin-top: 15px;
 }
 
-/* VOLTAR */
+/* VOLTAR (PADRÃO DO SITE) */
 .back {
-  margin-top: 15px;
   display: inline-block;
+  margin-top: 15px;
   font-size: 13px;
-  color: #1565c0;
+  color: #222;
   text-decoration: none;
+  border-bottom: 1px solid #ccc;
 }
 
 /* MOBILE */
@@ -117,47 +140,44 @@ h1 {
 <div class="card">
 
   <div class="info-item">
-    <div class="label">📅 Data</div>
+    <div class="label">Data</div>
     <div class="value">04/06/2026</div>
   </div>
 
   <div class="info-item">
-    <div class="label">⏰ Horário</div>
+    <div class="label">Horário</div>
     <div class="value">13h às 17h</div>
   </div>
 
   <div class="info-item">
-    <div class="label">📍 Local</div>
+    <div class="label">Local</div>
     <div class="value">Star Kids Buffet Unidade Maia - Avenida Suplicy, 539 - Guarulhos</div>
   </div>
 
   <!-- BOTÕES -->
   <div class="buttons">
 
-    <!-- GOOGLE MAPS -->
     <a href="https://www.google.com/maps?q=Star+Kids+Buffet+Unidade+Maia" target="_blank" class="button">
-      Abrir no Google Maps
+      Google Maps
     </a>
 
-    <!-- WAZE -->
-    <a href="https://waze.com/ul/h6gyfsgr5d" target="_blank" class="button waze">
-      Abrir no Waze
+    <!-- WAZE CORRIGIDO -->
+    <a href="https://waze.com/ul?ll=-23.448279757356378,-46.542037890670834&navigate=yes" target="_blank" class="button">
+      Waze
     </a>
 
   </div>
 
-  <!-- MAPA EMBUTIDO -->
+  <!-- MAPA -->
   <iframe
     class="map"
     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3660.337714696774!2d-46.542037890670834!3d-23.448279757356378!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465eb9d4dab7e487%3A0x8a7b1d793587a6e!2sStar%20Kids%20Buffet%20Unidade%20Maia!5e0!3m2!1spt-BR!2sbr!4v1776954024471!5m2!1spt-BR!2sbr"
-    allowfullscreen=""
-    loading="lazy"
-    referrerpolicy="no-referrer-when-downgrade">
+    loading="lazy">
   </iframe>
 
 </div>
 
-<a href="index.html" class="back">⬅ Voltar</a>
+<a href="index.html" class="back">Voltar</a>
 
 </div>
 
