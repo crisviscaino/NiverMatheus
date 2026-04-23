@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Aniversário</title>
+<title>Matheus</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -17,35 +17,36 @@ body {
   background: linear-gradient(135deg, #e3f2fd, #bbdefb);
 }
 
-/* CARROSSEL FULL WIDTH REAL */
-.carousel img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
-  position: absolute;
-  opacity: 0;
-  transition: opacity 1s;
+/* CARROSSEL */
+.carousel {
+  position: relative;
+  width: 100vw;
+  height: 260px;
+  overflow: hidden;
+  margin-left: calc(-50vw + 50%);
+  background: #000; /* fallback */
 }
 
 .carousel img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain; /* NÃO CORTA */
   position: absolute;
   opacity: 0;
   transition: opacity 1s;
+  background: #000;
 }
 
 .carousel img.active {
   opacity: 1;
 }
 
+/* overlay suave */
 .overlay {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25));
+  background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2));
 }
 
 /* CONTAINER */
@@ -59,7 +60,7 @@ h1 {
   font-family: 'Oswald', sans-serif;
   font-size: 28px;
   letter-spacing: 1.5px;
-  color: #2e2e2e; /* cinza escuro elegante */
+  color: #2e2e2e;
   margin-top: 20px;
   margin-bottom: 10px;
 }
@@ -111,11 +112,11 @@ h1 {
   color: #777;
 }
 
-/* RESPONSIVO */
+/* MOBILE */
 @media (max-width: 600px) {
 
   .carousel {
-    height: 200px;
+    height: 220px;
   }
 
   h1 {
@@ -154,9 +155,9 @@ h1 {
 <div class="carousel">
   <div class="overlay"></div>
 
-  <img src="carrossel1.jpeg" class="active">
-  <img src="carrossel2.jpeg">
-  <img src="carrossel3.jpeg">
+  <img src="carrossel1.jpg" class="active">
+  <img src="carrossel2.jpg">
+  <img src="carrossel3.jpg">
 </div>
 
 <div class="container">
