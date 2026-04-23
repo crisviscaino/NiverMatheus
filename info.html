@@ -16,6 +16,7 @@ body {
   text-align: center;
 }
 
+/* CONTAINER */
 .container {
   padding: 30px 20px;
 }
@@ -34,11 +35,11 @@ h1 {
   padding: 20px;
   border-radius: 14px;
   box-shadow: 0 6px 14px rgba(0,0,0,0.1);
-  max-width: 400px;
+  max-width: 420px;
   margin: 0 auto 20px;
 }
 
-/* TEXTO */
+/* ITENS */
 .info-item {
   margin-bottom: 15px;
 }
@@ -54,16 +55,24 @@ h1 {
   color: #222;
 }
 
-/* BOTÃO */
+/* BOTÕES */
+.buttons {
+  margin-top: 10px;
+}
+
 .button {
   display: inline-block;
-  margin-top: 10px;
+  margin: 5px;
   padding: 10px 15px;
   background: #1565c0;
   color: white;
   text-decoration: none;
   border-radius: 8px;
   font-size: 13px;
+}
+
+.button.waze {
+  background: #00c853;
 }
 
 /* MAPA */
@@ -82,6 +91,17 @@ h1 {
   font-size: 13px;
   color: #1565c0;
   text-decoration: none;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .card {
+    padding: 15px;
+  }
+
+  .map {
+    height: 220px;
+  }
 }
 
 </style>
@@ -108,22 +128,32 @@ h1 {
 
   <div class="info-item">
     <div class="label">📍 Local</div>
-    <div class="value">Buffet Star Kids Maia - Avenida Suplicy, 539 - Guarulhos</div>
+    <div class="value">Star Kids Buffet Unidade Maia - Avenida Suplicy, 539 - Guarulhos</div>
   </div>
 
-  <!-- BOTÃO GOOGLE MAPS -->
-  <a href="https://www.google.com/maps/place/Star+Kids+Buffet+Unidade+Maia/@-23.4486389,-46.5399833,18.53z/data=!4m6!3m5!1s0x465eb9d4dab7e487:0x8a7b1d793587a6e!8m2!3d-23.4482847!4d-46.5394576!16s%2Fg%2F11vcv4mzv2?entry=ttu&g_ep=EgoyMDI2MDQyMC4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="button">
-    Ver no mapa
-  </a>
+  <!-- BOTÕES -->
+  <div class="buttons">
+
+    <!-- GOOGLE MAPS -->
+    <a href="https://www.google.com/maps?q=Star+Kids+Buffet+Unidade+Maia" target="_blank" class="button">
+      Abrir no Google Maps
+    </a>
+
+    <!-- WAZE -->
+    <a href="https://waze.com/ul?ll=-23.448279757356378,-46.542037890670834&navigate=yes" target="_blank" class="button waze">
+      Abrir no Waze
+    </a>
+
+  </div>
 
   <!-- MAPA EMBUTIDO -->
   <iframe
-  class="map"
-  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3660.337714696774!2d-46.542037890670834!3d-23.448279757356378!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465eb9d4dab7e487%3A0x8a7b1d793587a6e!2sStar%20Kids%20Buffet%20Unidade%20Maia!5e0!3m2!1spt-BR!2sbr!4v1776954024471!5m2!1spt-BR!2sbr"
-  allowfullscreen=""
-  loading="lazy"
-  referrerpolicy="no-referrer-when-downgrade">
-</iframe>
+    class="map"
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3660.337714696774!2d-46.542037890670834!3d-23.448279757356378!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465eb9d4dab7e487%3A0x8a7b1d793587a6e!2sStar%20Kids%20Buffet%20Unidade%20Maia!5e0!3m2!1spt-BR!2sbr!4v1776954024471!5m2!1spt-BR!2sbr"
+    allowfullscreen=""
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
 
 </div>
 
