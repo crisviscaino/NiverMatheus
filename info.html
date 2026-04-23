@@ -1,1 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Informações</title>
 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+  text-align: center;
+}
+
+.container {
+  padding: 30px 20px;
+}
+
+/* TÍTULO */
+h1 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 26px;
+  color: #2e2e2e;
+  margin-bottom: 20px;
+}
+
+/* CARD */
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.1);
+  max-width: 400px;
+  margin: 0 auto 20px;
+}
+
+/* TEXTO */
+.info-item {
+  margin-bottom: 15px;
+}
+
+.label {
+  font-weight: 600;
+  font-size: 13px;
+  color: #555;
+}
+
+.value {
+  font-size: 15px;
+  color: #222;
+}
+
+/* BOTÃO */
+.button {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 15px;
+  background: #1565c0;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 13px;
+}
+
+/* MAPA */
+.map {
+  width: 100%;
+  height: 250px;
+  border: none;
+  border-radius: 12px;
+  margin-top: 15px;
+}
+
+/* VOLTAR */
+.back {
+  margin-top: 15px;
+  display: inline-block;
+  font-size: 13px;
+  color: #1565c0;
+  text-decoration: none;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>INFORMAÇÕES</h1>
+
+<div class="card">
+
+  <div class="info-item">
+    <div class="label">📅 Data</div>
+    <div class="value">04/06/2026</div>
+  </div>
+
+  <div class="info-item">
+    <div class="label">⏰ Horário</div>
+    <div class="value">13h às 17h</div>
+  </div>
+
+  <div class="info-item">
+    <div class="label">📍 Local</div>
+    <div class="value">Buffet Star Kids Maia</div>
+  </div>
+
+  <!-- BOTÃO GOOGLE MAPS -->
+  <a href="https://www.google.com/maps/place/Star+Kids+Buffet+Unidade+Maia/@-23.4486389,-46.5399833,18.53z/data=!4m6!3m5!1s0x465eb9d4dab7e487:0x8a7b1d793587a6e!8m2!3d-23.4482847!4d-46.5394576!16s%2Fg%2F11vcv4mzv2?entry=ttu&g_ep=EgoyMDI2MDQyMC4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="button">
+    Ver no mapa
+  </a>
+
+  <!-- MAPA EMBUTIDO -->
+  <iframe 
+    class="map"
+    src="https://www.google.com/maps/place/Star+Kids+Buffet+Unidade+Maia/@-23.4486389,-46.5399833,18.53z/data=!4m6!3m5!1s0x465eb9d4dab7e487:0x8a7b1d793587a6e!8m2!3d-23.4482847!4d-46.5394576!16s%2Fg%2F11vcv4mzv2?entry=ttu&g_ep=EgoyMDI2MDQyMC4wIKXMDSoASAFQAw%3D%3D">
+  </iframe>
+
+</div>
+
+<a href="index.html" class="back">⬅ Voltar</a>
+
+</div>
+
+</body>
+</html>
