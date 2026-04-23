@@ -237,19 +237,19 @@ function atualizarContagem() {
   if (dias > 1) {
     texto.innerText = "Faltam";
     numero.innerText = dias;
-    resto.innerText = "dias para a missão";
+    resto.innerText = "dias para a missão!";
   } else if (dias === 1) {
     texto.innerText = "Falta";
     numero.innerText = "1";
-    resto.innerText = "dia para a missão";
+    resto.innerText = "dia para a missão!";
   } else if (dias === 0) {
     texto.innerText = "";
-    numero.innerText = "HOJE";
+    numero.innerText = "HOJE!!!";
     resto.innerText = "";
   } else {
     texto.innerText = "";
     numero.innerText = "";
-    resto.innerText = "A festa já aconteceu";
+    resto.innerText = "A festa já aconteceu :(";
   }
 }
 
