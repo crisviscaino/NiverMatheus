@@ -2,11 +2,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Matheus</title>
+<title>Aniversário</title>
 
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
-<!-- Fonte elegante -->
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
 
 <style>
@@ -15,8 +14,12 @@ body {
   margin: 0;
   text-align: center;
 
+  /* FUNDO MAIS DIVERTIDO (camadas) */
   background:
-    linear-gradient(rgba(255,255,255,0.94), rgba(255,255,255,0.94)),
+    radial-gradient(circle at 20% 20%, rgba(25,118,210,0.08), transparent 40%),
+    radial-gradient(circle at 80% 30%, rgba(239,83,80,0.08), transparent 40%),
+    radial-gradient(circle at 50% 80%, rgba(25,118,210,0.06), transparent 40%),
+    linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.95)),
     url('https://www.transparenttextures.com/patterns/comic-noise.png');
 }
 
@@ -24,23 +27,26 @@ body {
   padding: 50px 20px;
 }
 
-/* TÍTULO ELEGANTE */
+/* TÍTULO MAIS FORTE E BONITO */
 h1 {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   font-size: 26px;
   letter-spacing: 2px;
-  color: #1a1a1a;
+  color: #1565c0;
+
+  /* sombra elegante */
+  text-shadow: 1px 2px 6px rgba(21,101,192,0.25);
+
   margin-bottom: 10px;
 }
 
-/* detalhe minimalista sofisticado */
 h1::after {
   content: "";
   display: block;
   width: 40px;
   height: 2px;
-  background: linear-gradient(to right, #1976d2, #ef5350);
+  background: linear-gradient(to right, #1565c0, #42a5f5);
   margin: 12px auto 0;
   border-radius: 10px;
 }
@@ -81,7 +87,7 @@ h1::after {
 .icon {
   font-size: 20px;
   margin-bottom: 6px;
-  color: #1976d2;
+  color: #1565c0;
 }
 
 .card h3 {
@@ -95,13 +101,13 @@ h1::after {
   color: #999;
 }
 
-/* detalhe sutil (quase imperceptível, mas elegante) */
+/* detalhe HQ sutil */
 .card::before {
   content: "";
   position: absolute;
   width: 3px;
   height: 3px;
-  background: #1976d2;
+  background: #1565c0;
   border-radius: 50%;
   top: 8px;
   left: 8px;
@@ -129,7 +135,7 @@ h1::after {
 
 <a href="presentes.html" class="card">
   <div class="icon"><i class="fas fa-star"></i></div>
-  <h3>Sugestões</h3>
+  <h3>Ideias</h3>
   <p>O que ele ama</p>
 </a>
 
