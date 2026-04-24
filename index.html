@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&family=Poppins:wght@300;400&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
 
 <style>
 body {
@@ -69,37 +69,41 @@ h1 {
 .countdown {
   font-size: 14px;
   color: #444;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   font-weight: 500;
 }
 
-/* ANIMAÇÃO SUAVE */
+/* ANIMAÇÃO */
 @keyframes pulse {
-  0% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.08); opacity: 0.85; }
-  100% { transform: scale(1); opacity: 1; }
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
 }
 
-/* CAIXAS DO TEMPO */
+/* RETÂNGULO */
 .time-box {
   display: inline-block;
-  background: #d32f2f;
-  color: white;
-  padding: 6px 8px;
-  margin: 2px;
-  border-radius: 6px;
-  font-weight: 700;
-  min-width: 40px;
+  background: #1a0000;
+  padding: 12px 18px;
+  border-radius: 10px;
+  margin-bottom: 15px;
 
-  box-shadow: 2px 2px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 0 10px rgba(211,47,47,0.4);
 
   animation: pulse 1.8s infinite ease-in-out;
 }
 
-.label-time {
-  font-size: 10px;
-  display: block;
-  opacity: 0.8;
+/* TEXTO DIGITAL NEON */
+.time-text {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 18px;
+  letter-spacing: 2px;
+  color: #ff4d4d;
+
+  text-shadow:
+    0 0 5px #ff4d4d,
+    0 0 10px #ff4d4d,
+    0 0 20px rgba(255, 0, 0, 0.6);
 }
 
 /* CARDS */
@@ -144,6 +148,7 @@ h1 {
   .carousel { height: 220px; }
   h1 { font-size: 22px; }
   .card { width: 45%; }
+  .time-text { font-size: 16px; }
 }
 </style>
 
@@ -162,10 +167,9 @@ h1 {
 
 <h1>ANIVERSÁRIO DO MATHEUS</h1>
 
-<div class="countdown">
-  Faltam:
-  <div id="contador"></div>
-</div>
+<div class="countdown">Faltam:</div>
+
+<div id="contador" class="time-box"></div>
 
 <div class="cards">
   <a href="sobre.html" class="card"><h3>Sobre</h3></a>
@@ -199,7 +203,7 @@ function atualizarContagem() {
   const diferenca = dataEvento - agora;
 
   if (diferenca <= 0) {
-    document.getElementById("contador").innerHTML = "É HOJE!!!";
+    document.getElementById("contador").innerHTML = "<span class='time-text'>É HOJE!!!</span>";
     return;
   }
 
@@ -208,12 +212,13 @@ function atualizarContagem() {
   const minutos = Math.floor((diferenca / (1000 * 60)) % 60);
   const segundos = Math.floor((diferenca / 1000) % 60);
 
-  document.getElementById("contador").innerHTML = `
-    <div class="time-box">${dias}<span class="label-time">dias</span></div>
-    <div class="time-box">${horas}<span class="label-time">h</span></div>
-    <div class="time-box">${minutos}<span class="label-time">min</span></div>
-    <div class="time-box">${segundos}<span class="label-time">s</span></div>
-  `;
+  document.getElementById("contador").innerHTML =
+    "<span class='time-text'>" +
+    dias + "D : " +
+    horas + "H : " +
+    minutos + "M : " +
+    segundos + "S" +
+    "</span>";
 }
 
 setInterval(atualizarContagem, 1000);
