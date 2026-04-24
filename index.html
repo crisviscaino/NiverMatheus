@@ -13,7 +13,6 @@ body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
 
-  /* FUNDO HQ */
   background-color: #f7f7f7;
   background-image:
     radial-gradient(circle, rgba(0,0,0,0.06) 1px, transparent 1px),
@@ -63,7 +62,7 @@ h1 {
   letter-spacing: 1.5px;
   color: #2e2e2e;
   margin-top: 10px;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 /* CONTADOR */
@@ -74,17 +73,33 @@ h1 {
   font-weight: 500;
 }
 
-/* BADGE (APENAS NÚMERO) */
-.badge {
+/* ANIMAÇÃO SUAVE */
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.08); opacity: 0.85; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* CAIXAS DO TEMPO */
+.time-box {
   display: inline-block;
   background: #d32f2f;
   color: white;
-  padding: 2px 8px;
+  padding: 6px 8px;
+  margin: 2px;
   border-radius: 6px;
   font-weight: 700;
-  margin: 0 4px;
+  min-width: 40px;
 
   box-shadow: 2px 2px 0 rgba(0,0,0,0.2);
+
+  animation: pulse 1.8s infinite ease-in-out;
+}
+
+.label-time {
+  font-size: 10px;
+  display: block;
+  opacity: 0.8;
 }
 
 /* CARDS */
@@ -102,23 +117,10 @@ h1 {
   border-radius: 10px;
   text-decoration: none;
   color: #333;
-
   border: 1px solid rgba(0,0,0,0.05);
-  transition: all 0.2s ease;
 }
 
-.card:hover {
-  background: white;
-  transform: translateY(-2px);
-}
-
-.card h3 {
-  margin: 0;
-  font-size: 13px;
-  font-weight: 500;
-}
-
-/* BOTÃO DE FOTO */
+/* FOTO */
 .photo-section {
   margin-top: 18px;
   display: flex;
@@ -126,41 +128,23 @@ h1 {
 }
 
 .photo-button {
-  display: block;
   background: white;
   padding: 12px 16px;
   border-radius: 12px;
   text-decoration: none;
   color: #333;
   font-size: 13px;
-
   border: 1px solid rgba(0,0,0,0.05);
-
   width: 100%;
   max-width: 280px;
-  box-sizing: border-box;
 }
 
 /* MOBILE */
 @media (max-width: 600px) {
-
-  .carousel {
-    height: 220px;
-  }
-
-  .carousel img {
-    object-position: center top;
-  }
-
-  h1 {
-    font-size: 22px;
-  }
-
-  .card {
-    width: 45%;
-  }
+  .carousel { height: 220px; }
+  h1 { font-size: 22px; }
+  .card { width: 45%; }
 }
-
 </style>
 
 </head>
@@ -169,7 +153,6 @@ h1 {
 
 <div class="carousel">
   <div class="overlay"></div>
-
   <img src="carrossel1.jpeg" class="active">
   <img src="carrossel2.jpeg">
   <img src="carrossel3.jpeg">
@@ -179,34 +162,21 @@ h1 {
 
 <h1>ANIVERSÁRIO DO MATHEUS</h1>
 
-<p class="countdown">
-  <span id="texto"></span>
-  <span id="numero" class="badge"></span>
-  <span id="resto"></span>
-</p>
+<div class="countdown">
+  Faltam:
+  <div id="contador"></div>
+</div>
 
 <div class="cards">
-
-<a href="sobre.html" class="card">
-  <h3>Sobre</h3>
-</a>
-
-<a href="presentes.html" class="card">
-  <h3>Ideias</h3>
-</a>
-
-<a href="info.html" class="card">
-  <h3>Informações</h3>
-</a>
-
+  <a href="sobre.html" class="card"><h3>Sobre</h3></a>
+  <a href="presentes.html" class="card"><h3>Ideias</h3></a>
+  <a href="info.html" class="card"><h3>Informações</h3></a>
 </div>
 
 <div class="photo-section">
-
   <a href="https://photos.app.goo.gl/AkPUaFz8rVMsXZFu5" target="_blank" class="photo-button">
     📷 Compartilhe os cliques da festa conosco
   </a>
-
 </div>
 
 </div>
@@ -223,36 +193,30 @@ setInterval(() => {
 
 /* CONTADOR */
 function atualizarContagem() {
-  const dataEvento = new Date("2026-06-04T13:00:00");
-  const hoje = new Date();
+  const dataEvento = new Date(2026, 5, 4, 13, 0, 0);
+  const agora = new Date();
 
-  const diferenca = dataEvento - hoje;
+  const diferenca = dataEvento - agora;
 
-  const dias = Math.ceil(diferenca / (1000 * 60 * 60 * 24));
-
-  const texto = document.getElementById("texto");
-  const numero = document.getElementById("numero");
-  const resto = document.getElementById("resto");
-
-  if (dias > 1) {
-    texto.innerText = "Faltam";
-    numero.innerText = dias;
-    resto.innerText = "dias para a missão!";
-  } else if (dias === 1) {
-    texto.innerText = "Falta";
-    numero.innerText = "1";
-    resto.innerText = "dia para a missão!";
-  } else if (dias === 0) {
-    texto.innerText = "";
-    numero.innerText = "HOJE!!!";
-    resto.innerText = "";
-  } else {
-    texto.innerText = "";
-    numero.innerText = "";
-    resto.innerText = "A festa já aconteceu :(";
+  if (diferenca <= 0) {
+    document.getElementById("contador").innerHTML = "É HOJE!!!";
+    return;
   }
+
+  const dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
+  const horas = Math.floor((diferenca / (1000 * 60 * 60)) % 24);
+  const minutos = Math.floor((diferenca / (1000 * 60)) % 60);
+  const segundos = Math.floor((diferenca / 1000) % 60);
+
+  document.getElementById("contador").innerHTML = `
+    <div class="time-box">${dias}<span class="label-time">dias</span></div>
+    <div class="time-box">${horas}<span class="label-time">h</span></div>
+    <div class="time-box">${minutos}<span class="label-time">min</span></div>
+    <div class="time-box">${segundos}<span class="label-time">s</span></div>
+  `;
 }
 
+setInterval(atualizarContagem, 1000);
 atualizarContagem();
 </script>
 
